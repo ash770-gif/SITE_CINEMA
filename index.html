@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Isometra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Isometra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Isometra&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Isometra&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>IMDS</title>
+
+</head>
+<body>
+   <header>
+    <a href="#" class="logo">IMDS</a>
+    <div class="header_principal">
+      <input type="search" class="input" id="campoBusca" placeholder="Pesquisar filme, ano ou categoria..." aria-label="Pesquisar filmes">
+    </div>
+  </header>
+
+  <main>
+    <div class="filtros-grupo" id="grupoFiltros">
+      <button class="btn_ativo" data-tema="todos">Todos</button>
+      <button class="btn_genero" data-tema="hollywood">Hollywood e Blockbusters</button>
+      <button class="btn_genero" data-tema="animacao">Animação</button>
+      <button class="btn_genero" data-tema="ficcao">Ficção Científica</button>
+      <button class="btn_genero" data-tema="classicos">Clássicos do Cinema</button>
+    </div>
+
+    <h2 class="titulo-secao">Filmes em Destaque</h2>
+
+    <div class="grelha-filmes" id="grelhaFilmes">
+
+      <!-- 1. Star Wars -->
+      <article class="cartao-filme" 
+        data-tema="hollywood" 
+        data-titulo="Star Wars: Episódio IV – Uma Nova Esperança" 
+        data-ano="1977" 
+        data-nota="8.6" 
+        data-genero="Ficção Científica / Aventura" 
+        data-sinopse="Luke Skywalker se junta a Leia Organa, Han Solo e Obi-Wan Kenobi para enfrentar o Império Galáctico e destruir a Estrela da Morte."
+        data-importancia="O filme revolucionou o cinema ao popularizar efeitos visuais inovadores, criar um novo padrão para grandes produções de ficção científica e transformar a cultura pop com seu universo de personagens, mundos e histórias.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/star_wars.jpg" alt="Capa Star Wars">
+          <span class="ano-badge">1977</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Star Wars: Episódio IV – Uma Nova Esperança</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.6</div>
+          <span class="categoria-tag">Hollywood</span>
+          <p class="sinopse-previa">Luke Skywalker se junta a Leia Organa, Han Solo e Obi-Wan Kenobi para enfrentar o Império Galáctico...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Tubarão -->
+      <article class="cartao-filme" 
+        data-tema="hollywood" 
+        data-titulo="Tubarão" 
+        data-ano="1975" 
+        data-nota="8.1" 
+        data-genero="Aventura / Suspense" 
+        data-sinopse="Um enorme tubarão começa a atacar uma cidade litorânea, levando o chefe de polícia e um caçador a se unirem para tentar impedir novos ataques."
+        data-importancia="Dirigido por Steven Spielberg, o filme foi fundamental para a criação do conceito moderno de blockbuster, tornando-se um enorme sucesso comercial e mostrando como campanhas de divulgação e grandes estreias poderiam transformar filmes em fenômenos culturais.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/tubarão.jpg" alt="Capa Tubarão">
+          <span class="ano-badge">1975</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Tubarão</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.1</div>
+          <span class="categoria-tag">Hollywood</span>
+          <p class="sinopse-previa">Um enorme tubarão começa a atacar uma cidade litorânea, levando o chefe de polícia e um caçador...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Toy Story -->
+      <article class="cartao-filme" 
+        data-tema="animacao" 
+        data-titulo="Toy Story" 
+        data-ano="1995" 
+        data-nota="8.3" 
+        data-genero="Animação / Família" 
+        data-sinopse="Woody, um boneco cowboy, vê sua posição como brinquedo favorito ameaçada quando o novo astronauta Buzz Lightyear chega ao quarto de Andy."
+        data-importancia="Produzido pela Pixar, foi o primeiro longa-metragem totalmente feito com animação por computador, revolucionando a animação e mostrando que a tecnologia digital poderia criar histórias emocionantes e visualmente impressionantes.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/toy_story.jpg" alt="Capa Toy Story">
+          <span class="ano-badge">1995</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Toy Story</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.3</div>
+          <span class="categoria-tag">Animação</span>
+          <p class="sinopse-previa">Woody, um boneco cowboy, vê sua posição como brinquedo favorito ameaçada quando o novo astronauta Buzz...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Matrix -->
+      <article class="cartao-filme" 
+        data-tema="ficcao" 
+        data-titulo="Matrix" 
+        data-ano="1999" 
+        data-nota="8.7" 
+        data-genero="Ficção Científica / Ação" 
+        data-sinopse="Neo descobre que a realidade em que vive é uma simulação criada por máquinas e passa a lutar para descobrir a verdade e libertar a humanidade."
+        data-importancia="O filme marcou o cinema com seus efeitos visuais inovadores, especialmente o famoso efeito “bullet time”, além de misturar ficção científica, filosofia e ação de uma maneira que influenciou inúmeras produções posteriores.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/matrix.jpg" alt="Capa Matrix">
+          <span class="ano-badge">1999</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Matrix</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.7</div>
+          <span class="categoria-tag">Ficção Científica</span>
+          <p class="sinopse-previa">Neo descobre que a realidade em que vive é uma simulação criada por máquinas e passa a lutar...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Avatar -->
+      <article class="cartao-filme" 
+        data-tema="ficcao" 
+        data-titulo="Avatar" 
+        data-ano="2009" 
+        data-nota="7.9" 
+        data-genero="Ficção Científica / Aventura" 
+        data-sinopse="O ex-marine Jake Sully chega ao planeta Pandora e se envolve com os Na'vi enquanto começa a questionar os interesses humanos de exploração do planeta."
+        data-importancia="O filme foi um marco tecnológico por seus efeitos visuais, captura de movimento e uso do 3D, demonstrando novas possibilidades para a criação de mundos digitais e tornando-se um dos maiores sucessos comerciais da história do cinema.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/avatar.jpg" alt="Capa Avatar">
+          <span class="ano-badge">2009</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Avatar</div>
+          <div class="avaliacao"><span class="estrela">★</span> 7.9</div>
+          <span class="categoria-tag">Ficção Científica</span>
+          <p class="sinopse-previa">O ex-marine Jake Sully chega ao planeta Pandora e se envolve com os Na'vi enquanto começa...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. 2001: Uma Odisseia no Espaço -->
+      <article class="cartao-filme" 
+        data-tema="ficcao" 
+        data-titulo="2001: Uma Odisseia no Espaço" 
+        data-ano="1968" 
+        data-nota="8.3" 
+        data-genero="Ficção Científica / Aventura" 
+        data-sinopse="Uma missão espacial para investigar um misterioso monólito leva humanos a uma jornada que envolve inteligência artificial, evolução e os limites do conhecimento humano."
+        data-importancia="Dirigido por Stanley Kubrick, o filme revolucionou a ficção científica com seus efeitos especiais, representação realista do espaço e narrativa filosófica, influenciando profundamente o cinema do gênero.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/odisseia_no_espaço.jpg" alt="Capa 2001: Uma Odisseia no Espaço">
+          <span class="ano-badge">1968</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">2001: Uma Odisseia no Espaço</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.3</div>
+          <span class="categoria-tag">Ficção Científica</span>
+          <p class="sinopse-previa">Uma missão espacial para investigar um misterioso monólito leva humanos a uma jornada que envolve inteligência artificial...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Pulp Fiction -->
+      <article class="cartao-filme" 
+        data-tema="classicos" 
+        data-titulo="Pulp Fiction: Tempo de Violência" 
+        data-ano="1994" 
+        data-nota="8.9" 
+        data-genero="Crime / Drama" 
+        data-sinopse="Diferentes histórias de criminosos, assaltantes e pessoas envolvidas no mundo do crime se conectam de maneira inesperada, apresentando uma narrativa não linear cheia de violência, humor e diálogos marcantes."
+        data-importancia="Dirigido por Quentin Tarantino, o filme renovou o cinema independente e influenciou uma geração de cineastas com sua estrutura narrativa, estilo visual e mistura de diferentes gêneros.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/pulp_fiction.jpg" alt="Capa Pulp Fiction">
+          <span class="ano-badge">1994</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Pulp Fiction: Tempo de Violência</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.9</div>
+          <span class="categoria-tag">Clássicos</span>
+          <p class="sinopse-previa">Diferentes histórias de criminosos, assaltantes e pessoas envolvidas no mundo do crime se conectam...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. O Poderoso Chefão -->
+      <article class="cartao-filme" 
+        data-tema="classicos" 
+        data-titulo="O Poderoso Chefão" 
+        data-ano="1972" 
+        data-nota="9.2" 
+        data-genero="Crime / Drama" 
+        data-sinopse="A saga da família Corleone acompanha a transformação do jovem Michael Corleone na liderança do império criminoso da família."
+        data-importancia="Considerado um dos maiores filmes da história, a obra de Francis Ford Coppola elevou o gênero de máfia ao cinema de prestígio, destacando-se pela atuação, roteiro, direção e profundidade de seus personagens.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/o_poderoso_chefao.jpg" alt="Capa O Poderoso Chefão">
+          <span class="ano-badge">1972</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">O Poderoso Chefão</div>
+          <div class="avaliacao"><span class="estrela">★</span> 9.2</div>
+          <span class="categoria-tag">Clássicos</span>
+          <p class="sinopse-previa">A saga da família Corleone e a transformação do jovem Michael Corleone na liderança do império...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. Psicose -->
+      <article class="cartao-filme" 
+        data-tema="classicos" 
+        data-titulo="Psicose" 
+        data-ano="1960" 
+        data-nota="8.5" 
+        data-genero="Terror / Suspense" 
+        data-sinopse="Marion Crane foge após roubar dinheiro e se hospeda em um hotel isolado, onde conhece o misterioso Norman Bates, desencadeando uma série de acontecimentos assustadores."
+        data-importancia="Dirigido por Alfred Hitchcock, o filme revolucionou o suspense e o terror ao quebrar expectativas do público, utilizar uma montagem inovadora e transformar a famosa cena do chuveiro em um dos momentos mais marcantes da história do cinema.">
+        <div class="capa-container">
+          <img class="capa-imagem" src="fotos/psicose.jpg" alt="Capa Psicose">
+          <span class="ano-badge">1960</span>
+        </div>
+        <div class="info-filme">
+          <div class="titulo-filme">Psicose</div>
+          <div class="avaliacao"><span class="estrela">★</span> 8.5</div>
+          <span class="categoria-tag">Clássicos</span>
+          <p class="sinopse-previa">Marion Crane foge após roubar dinheiro e se hospeda em um hotel isolado, onde conhece o misterioso Norman Bates...</p>
+          <div class="botoes-cartao">
+            <button class="botao-lista" onclick="alternarLista(this)">+ Minha Lista</button>
+            <button class="botao-detalhes" onclick="abrirModal(this.closest('.cartao-filme'))">Detalhes</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Modal de Detalhes -->
+  <dialog id="modalDetalhes">
+    <div class="modal-cabecalho">
+      <h3 id="modalTitulo"></h3>
+      <div class="avaliacao"><span class="estrela">★</span> <span id="modalNota"></span></div>
+    </div>
+    <div class="modal-corpo">
+      <div>
+        <div class="modal-secao-titulo">Sinopse</div>
+        <div class="modal-texto" id="modalSinopse"></div>
+      </div>
+      <div>
+        <div class="modal-secao-titulo">Por que está nesta categoria?</div>
+        <div class="modal-importancia" id="modalImportancia"></div>
+      </div>
+      <div class="modal-meta">
+        <div><strong>Ano:</strong> <span id="modalAno"></span></div>
+        <div><strong>Gênero:</strong> <span id="modalGenero"></span></div>
+      </div>
+      <button class="botao-fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+  </dialog>
+
+  <footer>
+    Projeto por ashley, vinicius lopes e maria flor para projeto escolar Feira das Nações. Interface inspirada no IMDb.
+  </footer>
+</body>
+</html>
